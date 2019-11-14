@@ -2,7 +2,7 @@
  	"manifestVersion": 1,
  	"id": "devops-extension-cflint",
  	"publisher": "JoshKnutsonExtensions",
- 	"version": "1.0.6",
+ 	"version": "1.0.7",
  	"name": "cflint code analysis",
  	"description": "Run cflint Static code analysis for CFML (a linter) as part of your build",
  	"public": false,
@@ -26,7 +26,26 @@
                 "name": "tasks"
             }
  		}
- 	],
+	 ],
+	 "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+	 "links": {
+        "getstarted": {
+            "uri": "https://github.com/joshknutson/devops-extension-cflint"
+        },
+        "support": {
+            "uri": "https://github.com/joshknutson/devops-extension-cflint/issues"
+        },
+        "repository": {
+            "uri": "https://github.com/joshknutson/devops-extension-cflint"
+        },
+        "issues": {
+            "uri": "https://github.com/joshknutson/devops-extension-cflint/issues"
+        }
+    },
 	"tags": [
         "cflint",
         "build",

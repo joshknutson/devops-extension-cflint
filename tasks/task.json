@@ -5,7 +5,7 @@
     "friendlyName": "Static code analysis for CFML (a linter) for builds",
     "description": "This extension uses the **CFLint** tool to scan CFML files and provide feedback on potential issues through the editor and Problems view of VS Code. The ways in which this is triggered are configurable in the [Settings](#settings). The defaults are only to run when CFML files are opened or saved. The linter optionally takes rule configuration via a `.cflintrc` file, for which details can be found at [**CFLint**'s repo](https://github.com/cflint/CFLint#folder-based-configuration). This extension facilitates the creation and viewing of this file via [Commands](#commands). ",
     "author": "Josh Knutson",
-    "helpMarkDown": "[More information](https://marketplace.visualstudio.com/items?itemName=joshknutsonextensions.devops-extension-cflint) [cloc](https://github.com/AlDanial/cloc)",
+    "helpMarkDown": "[More information](https://marketplace.visualstudio.com/items?itemName=joshknutsonextensions.devops-extension-cflint) [cflint](https://github.com/cflint/CFLint)",
     "category": "Build",
     "visibility": [
         "Build",
@@ -17,7 +17,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 2
+        "Patch": 7
     },
     "minimumAgentVersion": "1.95.0",
     "groups": [
