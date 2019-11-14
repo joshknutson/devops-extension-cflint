@@ -3,10 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-variables:
-- name: devops-pat-versionnumber
-  value: uof7jyyf4zhlfiiqn64vbuvpbkaynftpf2hipjqmt4gbzopu27ca
-
 trigger:
 - master
 
@@ -15,7 +11,7 @@ pool:
 
 name: $(buildversion)
 steps:
-- script: echo devops pat ${devops-pat-versionnumber}
+- script: echo devops pat $(devops-pat-versionnumber)
   displayName: 'Run a one-line script'
 
 - task: versioncounter@1
@@ -23,5 +19,5 @@ steps:
     VersionVariable: 'buildversion'
     UpdateMinorVersion: true
     MaxValuePatchVersion: '100'
-    DevOpsPat: '${devops-pat-versionnumber}'
+    DevOpsPat: '$(devops-pat-versionnumber)'
 
