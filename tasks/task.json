@@ -17,7 +17,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 7
+        "Patch": 11
     },
     "minimumAgentVersion": "1.95.0",
     "groups": [
@@ -45,15 +45,6 @@
             "defaultValue": "https://github.com/cflint/CFLint/releases/download/CFLint-1.4.1/CFLint-1.4.1-all.jar",
             "required": true,
             "helpMarkDown": "Download URL of cflint-jar. Can be network share as well. Default value: https://github.com/cflint/CFLint/releases/download/CFLint-1.4.1/CFLint-1.4.1-all.jar",
-            "groupName": "advanced"
-        },
-        {
-            "name": "javaDownloadUrl",
-            "type": "string",
-            "label": "Download url of java exe",
-            "defaultValue": "https://github.com/joshknutson/devops-extension-cflint/raw/master/resources/java.exe",
-            "required": true,
-            "helpMarkDown": "Download URL of java exe. Can be network share as well. Default value: https://github.com/joshknutson/devops-extension-cflint/raw/master/resources/java.exe",
             "groupName": "advanced"
         },
         {

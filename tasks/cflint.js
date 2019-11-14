@@ -10,8 +10,10 @@ var executeCflintJar = function (taskDisplayName, cflintJarArguments) {
     //const outputDirectory = path.resolve(workingFolder, "cflint/output");
     //!fs.existsSync(outputDirectory) && fs.mkdirSync(outputDirectory);
     //const outputHTMLFileName = ${path.resolve(outputDirectory, outputFileName+'.html')};
-    //const commandToExecute = `java.exe ${cflintJarArguments} --sum-one --md --out ${clocCliResultFilename}`;
-    var commandToExecute = "java.exe -Xmx512m -jar " + path.resolve(workingFolder, "cflint.jar") + " " + cflintJarArguments + " -folder " + workingFolder + "  -html -htmlfile " + path.resolve(outputDirectory, "coverage.html") + " -text -textfile " + path.resolve(outputDirectory, "coverage.txt") + " -json -jsonfile " + path.resolve(outputDirectory, "coverage.json");
+    if (cflintJarArguments === undefined) {
+        cflintJarArguments = "";
+    }
+    var commandToExecute = "java -Xmx512m -jar " + path.resolve(workingFolder, "cflint.jar") + " " + cflintJarArguments + " -folder " + workingFolder + "  -html -htmlfile " + path.resolve(outputDirectory, "coverage.html") + " -text -textfile " + path.resolve(outputDirectory, "coverage.txt") + " -json -jsonfile " + path.resolve(outputDirectory, "coverage.json");
     console.log('Run Code Analysis');
     console.log("Executing command: " + commandToExecute);
     child_process.exec(commandToExecute, function (error, stdout) {
@@ -32,7 +34,7 @@ var executeCflintJar = function (taskDisplayName, cflintJarArguments) {
         fs.appendFile(markdownFile, content, function (err) { return function n() { }; });
         // fs.appendFile(markdownFile, "Code analysis is in 'Artifacts' \r\n", (err) => function n () { });
         fs.appendFile(markdownFile, el, function (err) { return function n() { }; });
-        console.log("##vso[task.addattachment type=Distributedtask.Core.Summary;name=Code Analysis;]" + outputDirectory + "coverage.md");
+        console.log("##vso[task.addattachment type=Distributedtask.Core.Summary;name=Code Analysis;]" + markdownFile);
         console.log('Attach Code Analysis Errors');
         var jsonFile = path.resolve(outputDirectory, "coverage.json");
         var jc = JSON.parse(fs.readFileSync(jsonFile, 'utf8'));

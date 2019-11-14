@@ -38,11 +38,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var tl = require("azure-pipelines-task-lib/task");
 var cflintDownloader_1 = require("./cflintDownloader");
-var javaExeDownloader_1 = require("./javaExeDownloader");
 var cflint_1 = require("./cflint");
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var taskDisplayName, workingFolder, javaDownloadUrl, cflintJarDownloadUrl, cflintArguments;
+        var taskDisplayName, workingFolder, cflintJarDownloadUrl, cflintArguments;
         return __generator(this, function (_a) {
             taskDisplayName = tl.getVariable("task.displayname");
             if (!taskDisplayName) {
@@ -56,11 +55,6 @@ function run() {
             console.log("working folder: " + workingFolder);
             tl.cd(workingFolder);
             process.chdir(workingFolder);
-            javaDownloadUrl = tl.getInput("javaDownloadUrl", true);
-            if (javaDownloadUrl === undefined || javaDownloadUrl === '') {
-                javaDownloadUrl = "https://github.com/joshknutson/devops-extension-cflint/raw/master/resources/java.exe";
-            }
-            console.log("java-exe download url: " + javaDownloadUrl);
             cflintJarDownloadUrl = tl.getInput("cflintJarDownloadUrl", true);
             console.log("cflint-jar download url: " + cflintJarDownloadUrl);
             cflintArguments = tl.getInput("cflintArguments");
@@ -69,16 +63,11 @@ function run() {
             }
             console.log("arguments: " + cflintArguments);
             try {
-                javaExeDownloader_1.default(javaDownloadUrl, function (error) {
+                cflintDownloader_1.default(cflintJarDownloadUrl, function (error) {
                     if (error) {
                         throw error;
                     }
-                    cflintDownloader_1.default(cflintJarDownloadUrl, function (error) {
-                        if (error) {
-                            throw error;
-                        }
-                        cflint_1.default(taskDisplayName, cflintArguments);
-                    });
+                    cflint_1.default(taskDisplayName, cflintArguments);
                 });
             }
             catch (err) {
