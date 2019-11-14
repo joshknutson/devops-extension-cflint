@@ -1,0 +1,22 @@
+{
+  "name": "cflint-build-task",
+  "version": "1.0.0",
+  "description": "cflint for tfs/vsts/devops",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "CFML",
+    "cflint",
+    "build"
+  ],
+  "author": "Josh Knutson",
+  "license": "MIT",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.9.3",
+    "download": "7.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.7",
+    "@types/q": "^1.5.2"
+  }
+}

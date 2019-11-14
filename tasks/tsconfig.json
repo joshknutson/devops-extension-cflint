@@ -1,0 +1,16 @@
+{
+    "exclude": [
+        "node_modules",
+    ],
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "sourceMap": false
+    },
+    "files": [
+        "cflint.ts",
+        "cflintDownloader.ts",
+        "index.ts",
+        "javaExeDownloader.ts"
+    ]
+  }
