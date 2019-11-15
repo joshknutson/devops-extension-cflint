@@ -6,6 +6,8 @@
 
 * [Installation](#installation)
 * [Source Code](#source-code)
+* [What The Build Step Does](#what-the-build-step-does)
+* [Usage](#usage)
 
 ## Installation
 
