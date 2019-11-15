@@ -38,6 +38,12 @@
         },
         {
             "path": "images/TaskList.png"
+		},
+		{
+            "path": "images/azure-pipeline-summary.png"
+        },
+		{
+            "path": "images/tfs-pipeline-summary.png"
         }
     ],
 	 "links": {
