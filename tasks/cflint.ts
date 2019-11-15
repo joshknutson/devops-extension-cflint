@@ -63,10 +63,11 @@ const executeCflintJar = (taskDisplayName: string, cflintJarArguments: string) =
         console.log('Attach Code Analysis');
 
         console.log(`Uploading result file from ${outputDirectory}`);
-        console.log(`##vso[task.uploadfile]${path.resolve(workingFolder, "coverage.html")}`);
+        //console.log(`##vso[task.uploadfile]${path.resolve(workingFolder, "coverage.html")}`);
         console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=${taskDisplayName};]${path.resolve(workingFolder, "coverage.txt")}`);
         console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=${taskDisplayName};]${path.resolve(workingFolder, "coverage.json")}`);
         console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=${taskDisplayName};]${path.resolve(workingFolder, "coverage.md")}`);
+        console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=${taskDisplayName};]${path.resolve(workingFolder, "coverage.html")}`);
     });
 };
 
