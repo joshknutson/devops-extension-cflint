@@ -58,9 +58,17 @@
         }
     },
 	"tags": [
-        "cflint",
+		"cfml",
+		"code analysis",
+		"code-quality",
+		"coldfusion",
+		"lint",
+		"linter",
+		"lucee",
+		"static-analysis",
+		"static-code-analysis",
         "build",
-        "code analysis"
+        "cflint"
     ],
  	"files": [
  		{
