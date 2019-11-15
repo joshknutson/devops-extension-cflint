@@ -34,7 +34,7 @@ var executeCflintJar = function (taskDisplayName, cflintJarArguments) {
         fs.appendFile(markdownFile, content, function (err) { return function n() { }; });
         // fs.appendFile(markdownFile, "Code analysis is in 'Artifacts' \r\n", (err) => function n () { });
         fs.appendFile(markdownFile, el, function (err) { return function n() { }; });
-        console.log("##vso[task.addattachment type=Distributedtask.Core.Summary;name=Code Analysis;]" + markdownFile);
+        console.log("##vso[task.addattachment type=Distributedtask.Core.Summary;name=" + taskDisplayName + ";]" + markdownFile);
         console.log('Attach Code Analysis Errors');
         var jsonFile = path.resolve(outputDirectory, "coverage.json");
         var jc = JSON.parse(fs.readFileSync(jsonFile, 'utf8'));
@@ -53,10 +53,12 @@ var executeCflintJar = function (taskDisplayName, cflintJarArguments) {
                 }
             }
         }
-        //console.log('Attach Code Analysis');
-        //console.log(`Uploading result file from ${outputDirectory}`);
-        //console.log(`##vso[task.addattachment type=Distributedtask.Core.Summary;name=${taskDisplayName};]${path.resolve(workingFolder, clocCliResultFilename)}`);
-        //console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=Code Analysis;]${outputDirectory}`);
+        console.log('Attach Code Analysis');
+        console.log("Uploading result file from " + outputDirectory);
+        console.log("##vso[task.uploadfile]" + path.resolve(workingFolder, "coverage.html"));
+        console.log("##vso[artifact.upload containerfolder=testresult;artifactname=" + taskDisplayName + ";]" + path.resolve(workingFolder, "coverage.txt"));
+        console.log("##vso[artifact.upload containerfolder=testresult;artifactname=" + taskDisplayName + ";]" + path.resolve(workingFolder, "coverage.json"));
+        console.log("##vso[artifact.upload containerfolder=testresult;artifactname=" + taskDisplayName + ";]" + path.resolve(workingFolder, "coverage.md"));
     });
 };
 exports.default = executeCflintJar;
