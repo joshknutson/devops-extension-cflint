@@ -39,7 +39,7 @@ const executeCflintJar = (taskDisplayName: string, cflintJarArguments: string) =
         // fs.appendFile(markdownFile, "Code analysis is in 'Artifacts' \r\n", (err) => function n () { });
         fs.appendFile(markdownFile, el, (err) => function n () { });
 
-        console.log(`##vso[task.addattachment type=Distributedtask.Core.Summary;name=Code Analysis;]${markdownFile}`);
+        console.log(`##vso[task.addattachment type=Distributedtask.Core.Summary;name=${taskDisplayName};]${markdownFile}`);
 
         console.log('Attach Code Analysis Errors');
         const jsonFile = path.resolve(outputDirectory, "coverage.json");
@@ -60,11 +60,13 @@ const executeCflintJar = (taskDisplayName: string, cflintJarArguments: string) =
                 }
             }
         }
-        //console.log('Attach Code Analysis');
+        console.log('Attach Code Analysis');
 
-        //console.log(`Uploading result file from ${outputDirectory}`);
-        //console.log(`##vso[task.addattachment type=Distributedtask.Core.Summary;name=${taskDisplayName};]${path.resolve(workingFolder, clocCliResultFilename)}`);
-        //console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=Code Analysis;]${outputDirectory}`);
+        console.log(`Uploading result file from ${outputDirectory}`);
+        console.log(`##vso[task.uploadfile]${path.resolve(workingFolder, "coverage.html")}`);
+        console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=${taskDisplayName};]${path.resolve(workingFolder, "coverage.txt")}`);
+        console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=${taskDisplayName};]${path.resolve(workingFolder, "coverage.json")}`);
+        console.log(`##vso[artifact.upload containerfolder=testresult;artifactname=${taskDisplayName};]${path.resolve(workingFolder, "coverage.md")}`);
     });
 };
 
