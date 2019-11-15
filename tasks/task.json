@@ -52,7 +52,7 @@
             "type": "string",
             "label": "arguments",
             "defaultValue": "",
-            "required": true,
+            "required": false,
             "helpMarkDown": "Arguments for the cflint jar."
         }
     ],
