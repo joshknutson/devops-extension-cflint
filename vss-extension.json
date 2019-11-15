@@ -34,10 +34,10 @@
 	},
 	"screenshots": [
         {
-            "path": "screenshots/BuildSummary.png"
+            "path": "images/BuildSummary.png"
         },
         {
-            "path": "screenshots/TaskList.png"
+            "path": "images/TaskList.png"
         }
     ],
 	 "links": {
