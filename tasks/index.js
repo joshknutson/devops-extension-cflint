@@ -45,7 +45,7 @@ function run() {
         return __generator(this, function (_a) {
             taskDisplayName = tl.getVariable("task.displayname");
             if (!taskDisplayName) {
-                taskDisplayName = "cflint";
+                taskDisplayName = "cflint Code Analysis";
             }
             console.log("task display name: " + taskDisplayName);
             workingFolder = tl.getPathInput("workingFolder", false);

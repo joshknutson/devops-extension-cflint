@@ -6,7 +6,7 @@ async function run (): Promise<void> {
     let taskDisplayName = tl.getVariable("task.displayname");
 
     if (!taskDisplayName) {
-        taskDisplayName = "cflint";
+        taskDisplayName = "cflint Code Analysis";
     }
 
     console.log(`task display name: ${taskDisplayName}`);
