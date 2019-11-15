@@ -31,13 +31,24 @@
         "details": {
             "path": "README.md"
         }
-    },
+	},
+	"screenshots": [
+        {
+            "path": "screenshots/BuildSummary.png"
+        },
+        {
+            "path": "screenshots/TaskList.png"
+        }
+    ],
 	 "links": {
         "getstarted": {
             "uri": "https://github.com/joshknutson/devops-extension-cflint"
         },
         "support": {
             "uri": "https://github.com/joshknutson/devops-extension-cflint/issues"
+		},
+		"learn": {
+            "uri": "https://github.com/cflint/CFLint/blob/master/RULES.md"
         },
         "repository": {
             "uri": "https://github.com/joshknutson/devops-extension-cflint"
