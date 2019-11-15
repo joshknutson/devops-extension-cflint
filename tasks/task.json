@@ -12,7 +12,8 @@
         "Release"
     ],
     "demands": [
-        "node.js"
+        "node.js",
+        "java"
     ],
     "version": {
         "Major": 1,
