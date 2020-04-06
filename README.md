@@ -39,14 +39,14 @@ Add the task to your build configuration:
 - task: cflint@1
   inputs:
     workingFolder: '' #starting folder to start scanning
-    cflintJarDownloadUrl: 'https://github.com/cflint/CFLint/releases/download/CFLint-1.4.1/CFLint-1.4.1-all.jar'
+    cflintJarDownloadUrl: 'https://github.com/cflint/CFLint/releases/download/CFLint-1.5.0/CFLint-1.5.0-all.jar'
     cflintarguments: '' #extra arguments you want to pass along
 ```
 
 Arguments have to be specified:
 
 * By default the cfLint is running in the root of the repository, you can modify that in the advanced settings as the working folder task parameter.
-* By default the cfLint jar is downloaded from the url: `https://github.com/cflint/CFLint/releases/download/CFLint-1.4.1/CFLint-1.4.1-all.jar`:
+* By default the cfLint jar is downloaded from the url: `https://github.com/cflint/CFLint/releases/download/CFLint-1.5.0/CFLint-1.5.0-all.jar`:
   * You can change overwrite it to a different version if needed
   * But now file shares and local files are supported to such as:
 
@@ -64,9 +64,7 @@ Arguments have to be specified:
 
 This extension uses the **CFLint** tool to scan CFML files and provide feedback on potential issues. The linter optionally takes rule configuration via a `.cflintrc` file, for which details can be found at [**CFLint**'s repo](https://github.com/cflint/CFLint#folder-based-configuration).
 
-
 ## Known Issues/Limitations
 
 1. Not an issue with the extension itself, but be aware that **CFLint** is a heavy/slow application compared to most linters, especially when used through the command line. Some things are done with the extension to account for this.
-1. As of this writing, **CFLint** (v1.4.1) often misreports issue location.
-
+1. As of this writing, **CFLint** (v1.5.0) often misreports issue location.

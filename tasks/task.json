@@ -43,9 +43,9 @@
             "name": "cflintJarDownloadUrl",
             "type": "string",
             "label": "Download url of cflint-jar",
-            "defaultValue": "https://github.com/cflint/CFLint/releases/download/CFLint-1.4.1/CFLint-1.4.1-all.jar",
+            "defaultValue": "https://github.com/cflint/CFLint/releases/download/CFLint-1.5.0/CFLint-1.5.0-all.jar",
             "required": true,
-            "helpMarkDown": "Download URL of cflint-jar. Can be network share as well. Default value: https://github.com/cflint/CFLint/releases/download/CFLint-1.4.1/CFLint-1.4.1-all.jar",
+            "helpMarkDown": "Download URL of cflint-jar. Can be network share as well. Default value: https://github.com/cflint/CFLint/releases/download/CFLint-1.5.0/CFLint-1.5.0-all.jar",
             "groupName": "advanced"
         },
         {
